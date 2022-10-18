@@ -1,0 +1,29 @@
+spring:
+#  profiles: development-mysql
+  datasource:
+    name: kingbase8
+    driver-class-name: com.kingbase8.Driver
+    url: jdbc:kingbase8://127.0.0.1:54321/test?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+    username: system
+    password: 123456
+#    dialect: org.hibernate.dialect.PostgreSQL82Dialect
+
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update # Hibernate ddl auto (none, create, create-drop, update, validate)
+    properties:
+#      hibernate.dialect: org.hibernate.dialect.Kingbase8Dialect
+      hibernate.dialect: org.hibernate.dialect.PostgreSQL82Dialect
+      hibernate.format_sql: true
+      hibernate.max_fetch_depth: 1
+      hibernate.generate_statistics: true
+      hibernate.use_sql_comments: false
+
+logging:
+  level:
+    org:
+      hibernate:
+        engine:
+          internal: error

@@ -1,0 +1,31 @@
+
+
+spring:
+  kafka:
+    bootstrap-servers: 10.194.199.128:29092 #<\u53EF\u6839\u636E\u914D\u7F6E\u4FEE\u6539>
+    producer:
+      # \u91CD\u8BD5\u6B21\u6570\uFF0C\u9ED8\u8BA4Integer.MAX_VALUE
+      retries: 3
+      # \u540C\u4E00\u6279\u6B21\u5185\u5B58\u5927\u5C0F\uFF08\u9ED8\u8BA416K\uFF09
+      batch-size: 16384
+      # \u751F\u4EA7\u8005\u5185\u5B58\u7F13\u5B58\u533A\u5927\u5C0F(32M)
+      buffer-memory: 33554432
+      #ack 0 \u4E0D\u7B49\u5F85\u961F\u5217\u786E\u8BA4\uFF1B ack 1\u7B49\u5F85leader \u786E\u8BA4\uFF1B ack -1 \u7B49\u5F85\u6240\u6709\u8282\u70B9\u786E\u8BA4\u5B8C\u6210\uFF1B
+      acks: 1
+    consumer:
+      group-id: test  #\u53EF\u6839\u636E\u9700\u6C42\u4FEE\u6539
+      # \u5173\u95ED\u81EA\u52A8\u63D0\u4EA4\uFF0C\u6D88\u8D39\u540E\u624B\u52A8\u63D0\u4EA4
+      enable-auto-commit: false
+      # earliest\uFF1A\u4ECE\u5934\u5F00\u59CB\u6D88\u8D39   latest\uFF1A\u4ECE\u6700\u65B0\u7684\u5F00\u59CB\u6D88\u8D39   \u9ED8\u8BA4latest
+      auto-offset-reset: latest
+      # key\u548Cvalue\u53CD\u5E8F\u5217\u5316\uFF08\u9ED8\u8BA4\uFF0C\u53EF\u4EE5\u4E0D\u8BBE\u7F6E\uFF09
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      #      # \u6D88\u8D39\u8005\u5E76\u53D1\u80FD\u529B
+      concurrency: 1  #\u9ED8\u8BA4\u503C
+      #      # \u8BBE\u7F6E\u624B\u52A8\u63D0\u4EA4\u7684\u65F6\u5019\uFF0C\u9700\u8981\u8BBE\u7F6EackMode
+      ack-mode: MANUAL
+      missing-topics-fatal: false
+server:
+  port: 8081

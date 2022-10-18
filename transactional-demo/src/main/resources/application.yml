@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/test
+    username=: postgres
+    password: postgres
+    hikari: #连接池
+      maximum-pool-size: 10
+      minimum-idle: 5
+  jpa: #jpa配置
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+
+server:
+    port: 8080

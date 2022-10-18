@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hikvision.myproject.mybatis.mapper.CdDControlAlarmDelayMapper">
+  <resultMap id="BaseResultMap" type="com.hikvision.myproject.mybatis.entity.CdDControlAlarmDelay">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="build_type" jdbcType="VARCHAR" property="build_type" />
+    <result column="camera_function_type" jdbcType="VARCHAR" property="camera_function_type" />
+    <result column="cre_time" jdbcType="BIGINT" property="cre_time" />
+    <result column="face_avg_pass" jdbcType="INTEGER" property="face_avg_pass" />
+    <result column="face_cloud_avg_pass" jdbcType="INTEGER" property="face_cloud_avg_pass" />
+    <result column="face_cloud_pass_all" jdbcType="INTEGER" property="face_cloud_pass_all" />
+    <result column="face_cloud_second_avg_pass" jdbcType="INTEGER" property="face_cloud_second_avg_pass" />
+    <result column="face_cloud_second_pass_all" jdbcType="INTEGER" property="face_cloud_second_pass_all" />
+    <result column="face_cloud_second_today_pass" jdbcType="INTEGER" property="face_cloud_second_today_pass" />
+    <result column="face_cloud_today_pass" jdbcType="INTEGER" property="face_cloud_today_pass" />
+    <result column="face_model_avg_pass" jdbcType="INTEGER" property="face_model_avg_pass" />
+    <result column="face_model_today_pass" jdbcType="INTEGER" property="face_model_today_pass" />
+    <result column="face_overtime_avg_pass" jdbcType="INTEGER" property="face_overtime_avg_pass" />
+    <result column="face_overtime_today_pass" jdbcType="INTEGER" property="face_overtime_today_pass" />
+    <result column="face_today_pass" jdbcType="INTEGER" property="face_today_pass" />
+    <result column="hour" jdbcType="INTEGER" property="hour" />
+    <result column="hour_str" jdbcType="VARCHAR" property="hour_str" />
+    <result column="install_addr" jdbcType="VARCHAR" property="install_addr" />
+    <result column="key_type" jdbcType="VARCHAR" property="key_type" />
+    <result column="keyboard_code" jdbcType="VARCHAR" property="keyboard_code" />
+    <result column="location_type" jdbcType="VARCHAR" property="location_type" />
+    <result column="manage_unit" jdbcType="VARCHAR" property="manage_unit" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nonmotor_avg_pass" jdbcType="INTEGER" property="nonmotor_avg_pass" />
+    <result column="nonmotor_cloud_avg_pass" jdbcType="INTEGER" property="nonmotor_cloud_avg_pass" />
+    <result column="nonmotor_cloud_pass_all" jdbcType="INTEGER" property="nonmotor_cloud_pass_all" />
+    <result column="nonmotor_cloud_second_avg_pass" jdbcType="INTEGER" property="nonmotor_cloud_second_avg_pass" />
+    <result column="nonmotor_cloud_second_pass_all" jdbcType="INTEGER" property="nonmotor_cloud_second_pass_all" />
+    <result column="nonmotor_cloud_second_today_pass" jdbcType="INTEGER" property="nonmotor_cloud_second_today_pass" />
+    <result column="nonmotor_cloud_today_pass" jdbcType="INTEGER" property="nonmotor_cloud_today_pass" />
+    <result column="nonmotor_model_avg_pass" jdbcType="INTEGER" property="nonmotor_model_avg_pass" />
+    <result column="nonmotor_model_today_pass" jdbcType="INTEGER" property="nonmotor_model_today_pass" />
+    <result column="nonmotor_overtime_avg_pass" jdbcType="INTEGER" property="nonmotor_overtime_avg_pass" />
+    <result column="nonmotor_overtime_today_pass" jdbcType="INTEGER" property="nonmotor_overtime_today_pass" />
+    <result column="nonmotor_today_pass" jdbcType="INTEGER" property="nonmotor_today_pass" />
+    <result column="person_avg_pass" jdbcType="INTEGER" property="person_avg_pass" />
+    <result column="person_cloud_avg_pass" jdbcType="INTEGER" property="person_cloud_avg_pass" />
+    <result column="person_cloud_pass_all" jdbcType="INTEGER" property="person_cloud_pass_all" />
+    <result column="person_cloud_second_avg_pass" jdbcType="INTEGER" property="person_cloud_second_avg_pass" />
+    <result column="person_cloud_second_pass_all" jdbcType="INTEGER" property="person_cloud_second_pass_all" />
+    <result column="person_cloud_second_today_pass" jdbcType="INTEGER" property="person_cloud_second_today_pass" />
+    <result column="person_cloud_today_pass" jdbcType="INTEGER" property="person_cloud_today_pass" />
+    <result column="person_model_avg_pass" jdbcType="INTEGER" property="person_model_avg_pass" />
+    <result column="person_model_today_pass" jdbcType="INTEGER" property="person_model_today_pass" />
+    <result column="person_overtime_avg_pass" jdbcType="INTEGER" property="person_overtime_avg_pass" />
+    <result column="person_overtime_today_pass" jdbcType="INTEGER" property="person_overtime_today_pass" />
+    <result column="person_today_pass" jdbcType="INTEGER" property="person_today_pass" />
+    <result column="project" jdbcType="VARCHAR" property="project" />
+    <result column="prtday" jdbcType="INTEGER" property="prtday" />
+    <result column="region" jdbcType="VARCHAR" property="region" />
+    <result column="res_id" jdbcType="VARCHAR" property="res_id" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="status_chg_time" jdbcType="BIGINT" property="status_chg_time" />
+    <result column="statusc" jdbcType="INTEGER" property="statusc" />
+    <result column="vehicle_avg_pass" jdbcType="INTEGER" property="vehicle_avg_pass" />
+    <result column="vehicle_cloud_avg_pass" jdbcType="INTEGER" property="vehicle_cloud_avg_pass" />
+    <result column="vehicle_cloud_pass_all" jdbcType="INTEGER" property="vehicle_cloud_pass_all" />
+    <result column="vehicle_cloud_second_avg_pass" jdbcType="INTEGER" property="vehicle_cloud_second_avg_pass" />
+    <result column="vehicle_cloud_second_pass_all" jdbcType="INTEGER" property="vehicle_cloud_second_pass_all" />
+    <result column="vehicle_cloud_second_today_pass" jdbcType="INTEGER" property="vehicle_cloud_second_today_pass" />
+    <result column="vehicle_cloud_today_pass" jdbcType="INTEGER" property="vehicle_cloud_today_pass" />
+    <result column="vehicle_model_avg_pass" jdbcType="INTEGER" property="vehicle_model_avg_pass" />
+    <result column="vehicle_model_today_pass" jdbcType="INTEGER" property="vehicle_model_today_pass" />
+    <result column="vehicle_overtime_avg_pass" jdbcType="INTEGER" property="vehicle_overtime_avg_pass" />
+    <result column="vehicle_overtime_today_pass" jdbcType="INTEGER" property="vehicle_overtime_today_pass" />
+    <result column="vehicle_today_pass" jdbcType="INTEGER" property="vehicle_today_pass" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, build_type, camera_function_type, cre_time, face_avg_pass, face_cloud_avg_pass, 
+    face_cloud_pass_all, face_cloud_second_avg_pass, face_cloud_second_pass_all, face_cloud_second_today_pass, 
+    face_cloud_today_pass, face_model_avg_pass, face_model_today_pass, face_overtime_avg_pass, 
+    face_overtime_today_pass, face_today_pass, "hour", hour_str, install_addr, "key_type", 
+    keyboard_code, location_type, manage_unit, "name", nonmotor_avg_pass, nonmotor_cloud_avg_pass, 
+    nonmotor_cloud_pass_all, nonmotor_cloud_second_avg_pass, nonmotor_cloud_second_pass_all, 
+    nonmotor_cloud_second_today_pass, nonmotor_cloud_today_pass, nonmotor_model_avg_pass, 
+    nonmotor_model_today_pass, nonmotor_overtime_avg_pass, nonmotor_overtime_today_pass, 
+    nonmotor_today_pass, person_avg_pass, person_cloud_avg_pass, person_cloud_pass_all, 
+    person_cloud_second_avg_pass, person_cloud_second_pass_all, person_cloud_second_today_pass, 
+    person_cloud_today_pass, person_model_avg_pass, person_model_today_pass, person_overtime_avg_pass, 
+    person_overtime_today_pass, person_today_pass, project, prtday, region, res_id, "status", 
+    status_chg_time, statusc, vehicle_avg_pass, vehicle_cloud_avg_pass, vehicle_cloud_pass_all, 
+    vehicle_cloud_second_avg_pass, vehicle_cloud_second_pass_all, vehicle_cloud_second_today_pass, 
+    vehicle_cloud_today_pass, vehicle_model_avg_pass, vehicle_model_today_pass, vehicle_overtime_avg_pass, 
+    vehicle_overtime_today_pass, vehicle_today_pass
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from "cd_d_camera_delay"
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from "cd_d_camera_delay"
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.hikvision.myproject.mybatis.entity.CdDControlAlarmDelay" useGeneratedKeys="true">
+    insert into "cd_d_camera_delay" (build_type, camera_function_type, 
+      cre_time, face_avg_pass, face_cloud_avg_pass, 
+      face_cloud_pass_all, face_cloud_second_avg_pass, 
+      face_cloud_second_pass_all, face_cloud_second_today_pass, 
+      face_cloud_today_pass, face_model_avg_pass, 
+      face_model_today_pass, face_overtime_avg_pass, 
+      face_overtime_today_pass, face_today_pass, 
+      "hour", hour_str, install_addr, 
+      "key_type", keyboard_code, location_type, 
+      manage_unit, "name", nonmotor_avg_pass, 
+      nonmotor_cloud_avg_pass, nonmotor_cloud_pass_all, 
+      nonmotor_cloud_second_avg_pass, nonmotor_cloud_second_pass_all, 
+      nonmotor_cloud_second_today_pass, nonmotor_cloud_today_pass, 
+      nonmotor_model_avg_pass, nonmotor_model_today_pass, 
+      nonmotor_overtime_avg_pass, nonmotor_overtime_today_pass, 
+      nonmotor_today_pass, person_avg_pass, person_cloud_avg_pass, 
+      person_cloud_pass_all, person_cloud_second_avg_pass, 
+      person_cloud_second_pass_all, person_cloud_second_today_pass, 
+      person_cloud_today_pass, person_model_avg_pass, 
+      person_model_today_pass, person_overtime_avg_pass, 
+      person_overtime_today_pass, person_today_pass, 
+      project, prtday, region, 
+      res_id, "status", status_chg_time, 
+      statusc, vehicle_avg_pass, vehicle_cloud_avg_pass, 
+      vehicle_cloud_pass_all, vehicle_cloud_second_avg_pass, 
+      vehicle_cloud_second_pass_all, vehicle_cloud_second_today_pass, 
+      vehicle_cloud_today_pass, vehicle_model_avg_pass, 
+      vehicle_model_today_pass, vehicle_overtime_avg_pass, 
+      vehicle_overtime_today_pass, vehicle_today_pass
+      )
+    values (#{build_type,jdbcType=VARCHAR}, #{camera_function_type,jdbcType=VARCHAR}, 
+      #{cre_time,jdbcType=BIGINT}, #{face_avg_pass,jdbcType=INTEGER}, #{face_cloud_avg_pass,jdbcType=INTEGER}, 
+      #{face_cloud_pass_all,jdbcType=INTEGER}, #{face_cloud_second_avg_pass,jdbcType=INTEGER}, 
+      #{face_cloud_second_pass_all,jdbcType=INTEGER}, #{face_cloud_second_today_pass,jdbcType=INTEGER}, 
+      #{face_cloud_today_pass,jdbcType=INTEGER}, #{face_model_avg_pass,jdbcType=INTEGER}, 
+      #{face_model_today_pass,jdbcType=INTEGER}, #{face_overtime_avg_pass,jdbcType=INTEGER}, 
+      #{face_overtime_today_pass,jdbcType=INTEGER}, #{face_today_pass,jdbcType=INTEGER}, 
+      #{hour,jdbcType=INTEGER}, #{hour_str,jdbcType=VARCHAR}, #{install_addr,jdbcType=VARCHAR}, 
+      #{key_type,jdbcType=VARCHAR}, #{keyboard_code,jdbcType=VARCHAR}, #{location_type,jdbcType=VARCHAR}, 
+      #{manage_unit,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{nonmotor_avg_pass,jdbcType=INTEGER}, 
+      #{nonmotor_cloud_avg_pass,jdbcType=INTEGER}, #{nonmotor_cloud_pass_all,jdbcType=INTEGER}, 
+      #{nonmotor_cloud_second_avg_pass,jdbcType=INTEGER}, #{nonmotor_cloud_second_pass_all,jdbcType=INTEGER}, 
+      #{nonmotor_cloud_second_today_pass,jdbcType=INTEGER}, #{nonmotor_cloud_today_pass,jdbcType=INTEGER}, 
+      #{nonmotor_model_avg_pass,jdbcType=INTEGER}, #{nonmotor_model_today_pass,jdbcType=INTEGER}, 
+      #{nonmotor_overtime_avg_pass,jdbcType=INTEGER}, #{nonmotor_overtime_today_pass,jdbcType=INTEGER}, 
+      #{nonmotor_today_pass,jdbcType=INTEGER}, #{person_avg_pass,jdbcType=INTEGER}, #{person_cloud_avg_pass,jdbcType=INTEGER}, 
+      #{person_cloud_pass_all,jdbcType=INTEGER}, #{person_cloud_second_avg_pass,jdbcType=INTEGER}, 
+      #{person_cloud_second_pass_all,jdbcType=INTEGER}, #{person_cloud_second_today_pass,jdbcType=INTEGER}, 
+      #{person_cloud_today_pass,jdbcType=INTEGER}, #{person_model_avg_pass,jdbcType=INTEGER}, 
+      #{person_model_today_pass,jdbcType=INTEGER}, #{person_overtime_avg_pass,jdbcType=INTEGER}, 
+      #{person_overtime_today_pass,jdbcType=INTEGER}, #{person_today_pass,jdbcType=INTEGER}, 
+      #{project,jdbcType=VARCHAR}, #{prtday,jdbcType=INTEGER}, #{region,jdbcType=VARCHAR}, 
+      #{res_id,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{status_chg_time,jdbcType=BIGINT}, 
+      #{statusc,jdbcType=INTEGER}, #{vehicle_avg_pass,jdbcType=INTEGER}, #{vehicle_cloud_avg_pass,jdbcType=INTEGER}, 
+      #{vehicle_cloud_pass_all,jdbcType=INTEGER}, #{vehicle_cloud_second_avg_pass,jdbcType=INTEGER}, 
+      #{vehicle_cloud_second_pass_all,jdbcType=INTEGER}, #{vehicle_cloud_second_today_pass,jdbcType=INTEGER}, 
+      #{vehicle_cloud_today_pass,jdbcType=INTEGER}, #{vehicle_model_avg_pass,jdbcType=INTEGER}, 
+      #{vehicle_model_today_pass,jdbcType=INTEGER}, #{vehicle_overtime_avg_pass,jdbcType=INTEGER}, 
+      #{vehicle_overtime_today_pass,jdbcType=INTEGER}, #{vehicle_today_pass,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.hikvision.myproject.mybatis.entity.CdDControlAlarmDelay" useGeneratedKeys="true">
+    insert into "cd_d_camera_delay"
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="build_type != null">
+        build_type,
+      </if>
+      <if test="camera_function_type != null">
+        camera_function_type,
+      </if>
+      <if test="cre_time != null">
+        cre_time,
+      </if>
+      <if test="face_avg_pass != null">
+        face_avg_pass,
+      </if>
+      <if test="face_cloud_avg_pass != null">
+        face_cloud_avg_pass,
+      </if>
+      <if test="face_cloud_pass_all != null">
+        face_cloud_pass_all,
+      </if>
+      <if test="face_cloud_second_avg_pass != null">
+        face_cloud_second_avg_pass,
+      </if>
+      <if test="face_cloud_second_pass_all != null">
+        face_cloud_second_pass_all,
+      </if>
+      <if test="face_cloud_second_today_pass != null">
+        face_cloud_second_today_pass,
+      </if>
+      <if test="face_cloud_today_pass != null">
+        face_cloud_today_pass,
+      </if>
+      <if test="face_model_avg_pass != null">
+        face_model_avg_pass,
+      </if>
+      <if test="face_model_today_pass != null">
+        face_model_today_pass,
+      </if>
+      <if test="face_overtime_avg_pass != null">
+        face_overtime_avg_pass,
+      </if>
+      <if test="face_overtime_today_pass != null">
+        face_overtime_today_pass,
+      </if>
+      <if test="face_today_pass != null">
+        face_today_pass,
+      </if>
+      <if test="hour != null">
+        "hour",
+      </if>
+      <if test="hour_str != null">
+        hour_str,
+      </if>
+      <if test="install_addr != null">
+        install_addr,
+      </if>
+      <if test="key_type != null">
+        "key_type",
+      </if>
+      <if test="keyboard_code != null">
+        keyboard_code,
+      </if>
+      <if test="location_type != null">
+        location_type,
+      </if>
+      <if test="manage_unit != null">
+        manage_unit,
+      </if>
+      <if test="name != null">
+        "name",
+      </if>
+      <if test="nonmotor_avg_pass != null">
+        nonmotor_avg_pass,
+      </if>
+      <if test="nonmotor_cloud_avg_pass != null">
+        nonmotor_cloud_avg_pass,
+      </if>
+      <if test="nonmotor_cloud_pass_all != null">
+        nonmotor_cloud_pass_all,
+      </if>
+      <if test="nonmotor_cloud_second_avg_pass != null">
+        nonmotor_cloud_second_avg_pass,
+      </if>
+      <if test="nonmotor_cloud_second_pass_all != null">
+        nonmotor_cloud_second_pass_all,
+      </if>
+      <if test="nonmotor_cloud_second_today_pass != null">
+        nonmotor_cloud_second_today_pass,
+      </if>
+      <if test="nonmotor_cloud_today_pass != null">
+        nonmotor_cloud_today_pass,
+      </if>
+      <if test="nonmotor_model_avg_pass != null">
+        nonmotor_model_avg_pass,
+      </if>
+      <if test="nonmotor_model_today_pass != null">
+        nonmotor_model_today_pass,
+      </if>
+      <if test="nonmotor_overtime_avg_pass != null">
+        nonmotor_overtime_avg_pass,
+      </if>
+      <if test="nonmotor_overtime_today_pass != null">
+        nonmotor_overtime_today_pass,
+      </if>
+      <if test="nonmotor_today_pass != null">
+        nonmotor_today_pass,
+      </if>
+      <if test="person_avg_pass != null">
+        person_avg_pass,
+      </if>
+      <if test="person_cloud_avg_pass != null">
+        person_cloud_avg_pass,
+      </if>
+      <if test="person_cloud_pass_all != null">
+        person_cloud_pass_all,
+      </if>
+      <if test="person_cloud_second_avg_pass != null">
+        person_cloud_second_avg_pass,
+      </if>
+      <if test="person_cloud_second_pass_all != null">
+        person_cloud_second_pass_all,
+      </if>
+      <if test="person_cloud_second_today_pass != null">
+        person_cloud_second_today_pass,
+      </if>
+      <if test="person_cloud_today_pass != null">
+        person_cloud_today_pass,
+      </if>
+      <if test="person_model_avg_pass != null">
+        person_model_avg_pass,
+      </if>
+      <if test="person_model_today_pass != null">
+        person_model_today_pass,
+      </if>
+      <if test="person_overtime_avg_pass != null">
+        person_overtime_avg_pass,
+      </if>
+      <if test="person_overtime_today_pass != null">
+        person_overtime_today_pass,
+      </if>
+      <if test="person_today_pass != null">
+        person_today_pass,
+      </if>
+      <if test="project != null">
+        project,
+      </if>
+      <if test="prtday != null">
+        prtday,
+      </if>
+      <if test="region != null">
+        region,
+      </if>
+      <if test="res_id != null">
+        res_id,
+      </if>
+      <if test="status != null">
+        "status",
+      </if>
+      <if test="status_chg_time != null">
+        status_chg_time,
+      </if>
+      <if test="statusc != null">
+        statusc,
+      </if>
+      <if test="vehicle_avg_pass != null">
+        vehicle_avg_pass,
+      </if>
+      <if test="vehicle_cloud_avg_pass != null">
+        vehicle_cloud_avg_pass,
+      </if>
+      <if test="vehicle_cloud_pass_all != null">
+        vehicle_cloud_pass_all,
+      </if>
+      <if test="vehicle_cloud_second_avg_pass != null">
+        vehicle_cloud_second_avg_pass,
+      </if>
+      <if test="vehicle_cloud_second_pass_all != null">
+        vehicle_cloud_second_pass_all,
+      </if>
+      <if test="vehicle_cloud_second_today_pass != null">
+        vehicle_cloud_second_today_pass,
+      </if>
+      <if test="vehicle_cloud_today_pass != null">
+        vehicle_cloud_today_pass,
+      </if>
+      <if test="vehicle_model_avg_pass != null">
+        vehicle_model_avg_pass,
+      </if>
+      <if test="vehicle_model_today_pass != null">
+        vehicle_model_today_pass,
+      </if>
+      <if test="vehicle_overtime_avg_pass != null">
+        vehicle_overtime_avg_pass,
+      </if>
+      <if test="vehicle_overtime_today_pass != null">
+        vehicle_overtime_today_pass,
+      </if>
+      <if test="vehicle_today_pass != null">
+        vehicle_today_pass,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="build_type != null">
+        #{build_type,jdbcType=VARCHAR},
+      </if>
+      <if test="camera_function_type != null">
+        #{camera_function_type,jdbcType=VARCHAR},
+      </if>
+      <if test="cre_time != null">
+        #{cre_time,jdbcType=BIGINT},
+      </if>
+      <if test="face_avg_pass != null">
+        #{face_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_avg_pass != null">
+        #{face_cloud_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_pass_all != null">
+        #{face_cloud_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_second_avg_pass != null">
+        #{face_cloud_second_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_second_pass_all != null">
+        #{face_cloud_second_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_second_today_pass != null">
+        #{face_cloud_second_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_today_pass != null">
+        #{face_cloud_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_model_avg_pass != null">
+        #{face_model_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_model_today_pass != null">
+        #{face_model_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_overtime_avg_pass != null">
+        #{face_overtime_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_overtime_today_pass != null">
+        #{face_overtime_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_today_pass != null">
+        #{face_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="hour != null">
+        #{hour,jdbcType=INTEGER},
+      </if>
+      <if test="hour_str != null">
+        #{hour_str,jdbcType=VARCHAR},
+      </if>
+      <if test="install_addr != null">
+        #{install_addr,jdbcType=VARCHAR},
+      </if>
+      <if test="key_type != null">
+        #{key_type,jdbcType=VARCHAR},
+      </if>
+      <if test="keyboard_code != null">
+        #{keyboard_code,jdbcType=VARCHAR},
+      </if>
+      <if test="location_type != null">
+        #{location_type,jdbcType=VARCHAR},
+      </if>
+      <if test="manage_unit != null">
+        #{manage_unit,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nonmotor_avg_pass != null">
+        #{nonmotor_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_avg_pass != null">
+        #{nonmotor_cloud_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_pass_all != null">
+        #{nonmotor_cloud_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_second_avg_pass != null">
+        #{nonmotor_cloud_second_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_second_pass_all != null">
+        #{nonmotor_cloud_second_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_second_today_pass != null">
+        #{nonmotor_cloud_second_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_today_pass != null">
+        #{nonmotor_cloud_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_model_avg_pass != null">
+        #{nonmotor_model_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_model_today_pass != null">
+        #{nonmotor_model_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_overtime_avg_pass != null">
+        #{nonmotor_overtime_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_overtime_today_pass != null">
+        #{nonmotor_overtime_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_today_pass != null">
+        #{nonmotor_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_avg_pass != null">
+        #{person_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_avg_pass != null">
+        #{person_cloud_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_pass_all != null">
+        #{person_cloud_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_second_avg_pass != null">
+        #{person_cloud_second_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_second_pass_all != null">
+        #{person_cloud_second_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_second_today_pass != null">
+        #{person_cloud_second_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_today_pass != null">
+        #{person_cloud_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_model_avg_pass != null">
+        #{person_model_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_model_today_pass != null">
+        #{person_model_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_overtime_avg_pass != null">
+        #{person_overtime_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_overtime_today_pass != null">
+        #{person_overtime_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_today_pass != null">
+        #{person_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="project != null">
+        #{project,jdbcType=VARCHAR},
+      </if>
+      <if test="prtday != null">
+        #{prtday,jdbcType=INTEGER},
+      </if>
+      <if test="region != null">
+        #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="res_id != null">
+        #{res_id,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="status_chg_time != null">
+        #{status_chg_time,jdbcType=BIGINT},
+      </if>
+      <if test="statusc != null">
+        #{statusc,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_avg_pass != null">
+        #{vehicle_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_avg_pass != null">
+        #{vehicle_cloud_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_pass_all != null">
+        #{vehicle_cloud_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_second_avg_pass != null">
+        #{vehicle_cloud_second_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_second_pass_all != null">
+        #{vehicle_cloud_second_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_second_today_pass != null">
+        #{vehicle_cloud_second_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_today_pass != null">
+        #{vehicle_cloud_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_model_avg_pass != null">
+        #{vehicle_model_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_model_today_pass != null">
+        #{vehicle_model_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_overtime_avg_pass != null">
+        #{vehicle_overtime_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_overtime_today_pass != null">
+        #{vehicle_overtime_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_today_pass != null">
+        #{vehicle_today_pass,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hikvision.myproject.mybatis.entity.CdDControlAlarmDelay">
+    update "cd_d_camera_delay"
+    <set>
+      <if test="build_type != null">
+        build_type = #{build_type,jdbcType=VARCHAR},
+      </if>
+      <if test="camera_function_type != null">
+        camera_function_type = #{camera_function_type,jdbcType=VARCHAR},
+      </if>
+      <if test="cre_time != null">
+        cre_time = #{cre_time,jdbcType=BIGINT},
+      </if>
+      <if test="face_avg_pass != null">
+        face_avg_pass = #{face_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_avg_pass != null">
+        face_cloud_avg_pass = #{face_cloud_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_pass_all != null">
+        face_cloud_pass_all = #{face_cloud_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_second_avg_pass != null">
+        face_cloud_second_avg_pass = #{face_cloud_second_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_second_pass_all != null">
+        face_cloud_second_pass_all = #{face_cloud_second_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_second_today_pass != null">
+        face_cloud_second_today_pass = #{face_cloud_second_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_cloud_today_pass != null">
+        face_cloud_today_pass = #{face_cloud_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_model_avg_pass != null">
+        face_model_avg_pass = #{face_model_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_model_today_pass != null">
+        face_model_today_pass = #{face_model_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_overtime_avg_pass != null">
+        face_overtime_avg_pass = #{face_overtime_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_overtime_today_pass != null">
+        face_overtime_today_pass = #{face_overtime_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="face_today_pass != null">
+        face_today_pass = #{face_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="hour != null">
+        "hour" = #{hour,jdbcType=INTEGER},
+      </if>
+      <if test="hour_str != null">
+        hour_str = #{hour_str,jdbcType=VARCHAR},
+      </if>
+      <if test="install_addr != null">
+        install_addr = #{install_addr,jdbcType=VARCHAR},
+      </if>
+      <if test="key_type != null">
+        "key_type" = #{key_type,jdbcType=VARCHAR},
+      </if>
+      <if test="keyboard_code != null">
+        keyboard_code = #{keyboard_code,jdbcType=VARCHAR},
+      </if>
+      <if test="location_type != null">
+        location_type = #{location_type,jdbcType=VARCHAR},
+      </if>
+      <if test="manage_unit != null">
+        manage_unit = #{manage_unit,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        "name" = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nonmotor_avg_pass != null">
+        nonmotor_avg_pass = #{nonmotor_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_avg_pass != null">
+        nonmotor_cloud_avg_pass = #{nonmotor_cloud_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_pass_all != null">
+        nonmotor_cloud_pass_all = #{nonmotor_cloud_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_second_avg_pass != null">
+        nonmotor_cloud_second_avg_pass = #{nonmotor_cloud_second_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_second_pass_all != null">
+        nonmotor_cloud_second_pass_all = #{nonmotor_cloud_second_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_second_today_pass != null">
+        nonmotor_cloud_second_today_pass = #{nonmotor_cloud_second_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_cloud_today_pass != null">
+        nonmotor_cloud_today_pass = #{nonmotor_cloud_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_model_avg_pass != null">
+        nonmotor_model_avg_pass = #{nonmotor_model_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_model_today_pass != null">
+        nonmotor_model_today_pass = #{nonmotor_model_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_overtime_avg_pass != null">
+        nonmotor_overtime_avg_pass = #{nonmotor_overtime_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_overtime_today_pass != null">
+        nonmotor_overtime_today_pass = #{nonmotor_overtime_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="nonmotor_today_pass != null">
+        nonmotor_today_pass = #{nonmotor_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_avg_pass != null">
+        person_avg_pass = #{person_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_avg_pass != null">
+        person_cloud_avg_pass = #{person_cloud_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_pass_all != null">
+        person_cloud_pass_all = #{person_cloud_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_second_avg_pass != null">
+        person_cloud_second_avg_pass = #{person_cloud_second_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_second_pass_all != null">
+        person_cloud_second_pass_all = #{person_cloud_second_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_second_today_pass != null">
+        person_cloud_second_today_pass = #{person_cloud_second_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_cloud_today_pass != null">
+        person_cloud_today_pass = #{person_cloud_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_model_avg_pass != null">
+        person_model_avg_pass = #{person_model_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_model_today_pass != null">
+        person_model_today_pass = #{person_model_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_overtime_avg_pass != null">
+        person_overtime_avg_pass = #{person_overtime_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_overtime_today_pass != null">
+        person_overtime_today_pass = #{person_overtime_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="person_today_pass != null">
+        person_today_pass = #{person_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="project != null">
+        project = #{project,jdbcType=VARCHAR},
+      </if>
+      <if test="prtday != null">
+        prtday = #{prtday,jdbcType=INTEGER},
+      </if>
+      <if test="region != null">
+        region = #{region,jdbcType=VARCHAR},
+      </if>
+      <if test="res_id != null">
+        res_id = #{res_id,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        "status" = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="status_chg_time != null">
+        status_chg_time = #{status_chg_time,jdbcType=BIGINT},
+      </if>
+      <if test="statusc != null">
+        statusc = #{statusc,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_avg_pass != null">
+        vehicle_avg_pass = #{vehicle_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_avg_pass != null">
+        vehicle_cloud_avg_pass = #{vehicle_cloud_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_pass_all != null">
+        vehicle_cloud_pass_all = #{vehicle_cloud_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_second_avg_pass != null">
+        vehicle_cloud_second_avg_pass = #{vehicle_cloud_second_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_second_pass_all != null">
+        vehicle_cloud_second_pass_all = #{vehicle_cloud_second_pass_all,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_second_today_pass != null">
+        vehicle_cloud_second_today_pass = #{vehicle_cloud_second_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_cloud_today_pass != null">
+        vehicle_cloud_today_pass = #{vehicle_cloud_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_model_avg_pass != null">
+        vehicle_model_avg_pass = #{vehicle_model_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_model_today_pass != null">
+        vehicle_model_today_pass = #{vehicle_model_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_overtime_avg_pass != null">
+        vehicle_overtime_avg_pass = #{vehicle_overtime_avg_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_overtime_today_pass != null">
+        vehicle_overtime_today_pass = #{vehicle_overtime_today_pass,jdbcType=INTEGER},
+      </if>
+      <if test="vehicle_today_pass != null">
+        vehicle_today_pass = #{vehicle_today_pass,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hikvision.myproject.mybatis.entity.CdDControlAlarmDelay">
+    update "cd_d_camera_delay"
+    set build_type = #{build_type,jdbcType=VARCHAR},
+      camera_function_type = #{camera_function_type,jdbcType=VARCHAR},
+      cre_time = #{cre_time,jdbcType=BIGINT},
+      face_avg_pass = #{face_avg_pass,jdbcType=INTEGER},
+      face_cloud_avg_pass = #{face_cloud_avg_pass,jdbcType=INTEGER},
+      face_cloud_pass_all = #{face_cloud_pass_all,jdbcType=INTEGER},
+      face_cloud_second_avg_pass = #{face_cloud_second_avg_pass,jdbcType=INTEGER},
+      face_cloud_second_pass_all = #{face_cloud_second_pass_all,jdbcType=INTEGER},
+      face_cloud_second_today_pass = #{face_cloud_second_today_pass,jdbcType=INTEGER},
+      face_cloud_today_pass = #{face_cloud_today_pass,jdbcType=INTEGER},
+      face_model_avg_pass = #{face_model_avg_pass,jdbcType=INTEGER},
+      face_model_today_pass = #{face_model_today_pass,jdbcType=INTEGER},
+      face_overtime_avg_pass = #{face_overtime_avg_pass,jdbcType=INTEGER},
+      face_overtime_today_pass = #{face_overtime_today_pass,jdbcType=INTEGER},
+      face_today_pass = #{face_today_pass,jdbcType=INTEGER},
+      "hour" = #{hour,jdbcType=INTEGER},
+      hour_str = #{hour_str,jdbcType=VARCHAR},
+      install_addr = #{install_addr,jdbcType=VARCHAR},
+      "key_type" = #{key_type,jdbcType=VARCHAR},
+      keyboard_code = #{keyboard_code,jdbcType=VARCHAR},
+      location_type = #{location_type,jdbcType=VARCHAR},
+      manage_unit = #{manage_unit,jdbcType=VARCHAR},
+      "name" = #{name,jdbcType=VARCHAR},
+      nonmotor_avg_pass = #{nonmotor_avg_pass,jdbcType=INTEGER},
+      nonmotor_cloud_avg_pass = #{nonmotor_cloud_avg_pass,jdbcType=INTEGER},
+      nonmotor_cloud_pass_all = #{nonmotor_cloud_pass_all,jdbcType=INTEGER},
+      nonmotor_cloud_second_avg_pass = #{nonmotor_cloud_second_avg_pass,jdbcType=INTEGER},
+      nonmotor_cloud_second_pass_all = #{nonmotor_cloud_second_pass_all,jdbcType=INTEGER},
+      nonmotor_cloud_second_today_pass = #{nonmotor_cloud_second_today_pass,jdbcType=INTEGER},
+      nonmotor_cloud_today_pass = #{nonmotor_cloud_today_pass,jdbcType=INTEGER},
+      nonmotor_model_avg_pass = #{nonmotor_model_avg_pass,jdbcType=INTEGER},
+      nonmotor_model_today_pass = #{nonmotor_model_today_pass,jdbcType=INTEGER},
+      nonmotor_overtime_avg_pass = #{nonmotor_overtime_avg_pass,jdbcType=INTEGER},
+      nonmotor_overtime_today_pass = #{nonmotor_overtime_today_pass,jdbcType=INTEGER},
+      nonmotor_today_pass = #{nonmotor_today_pass,jdbcType=INTEGER},
+      person_avg_pass = #{person_avg_pass,jdbcType=INTEGER},
+      person_cloud_avg_pass = #{person_cloud_avg_pass,jdbcType=INTEGER},
+      person_cloud_pass_all = #{person_cloud_pass_all,jdbcType=INTEGER},
+      person_cloud_second_avg_pass = #{person_cloud_second_avg_pass,jdbcType=INTEGER},
+      person_cloud_second_pass_all = #{person_cloud_second_pass_all,jdbcType=INTEGER},
+      person_cloud_second_today_pass = #{person_cloud_second_today_pass,jdbcType=INTEGER},
+      person_cloud_today_pass = #{person_cloud_today_pass,jdbcType=INTEGER},
+      person_model_avg_pass = #{person_model_avg_pass,jdbcType=INTEGER},
+      person_model_today_pass = #{person_model_today_pass,jdbcType=INTEGER},
+      person_overtime_avg_pass = #{person_overtime_avg_pass,jdbcType=INTEGER},
+      person_overtime_today_pass = #{person_overtime_today_pass,jdbcType=INTEGER},
+      person_today_pass = #{person_today_pass,jdbcType=INTEGER},
+      project = #{project,jdbcType=VARCHAR},
+      prtday = #{prtday,jdbcType=INTEGER},
+      region = #{region,jdbcType=VARCHAR},
+      res_id = #{res_id,jdbcType=VARCHAR},
+      "status" = #{status,jdbcType=INTEGER},
+      status_chg_time = #{status_chg_time,jdbcType=BIGINT},
+      statusc = #{statusc,jdbcType=INTEGER},
+      vehicle_avg_pass = #{vehicle_avg_pass,jdbcType=INTEGER},
+      vehicle_cloud_avg_pass = #{vehicle_cloud_avg_pass,jdbcType=INTEGER},
+      vehicle_cloud_pass_all = #{vehicle_cloud_pass_all,jdbcType=INTEGER},
+      vehicle_cloud_second_avg_pass = #{vehicle_cloud_second_avg_pass,jdbcType=INTEGER},
+      vehicle_cloud_second_pass_all = #{vehicle_cloud_second_pass_all,jdbcType=INTEGER},
+      vehicle_cloud_second_today_pass = #{vehicle_cloud_second_today_pass,jdbcType=INTEGER},
+      vehicle_cloud_today_pass = #{vehicle_cloud_today_pass,jdbcType=INTEGER},
+      vehicle_model_avg_pass = #{vehicle_model_avg_pass,jdbcType=INTEGER},
+      vehicle_model_today_pass = #{vehicle_model_today_pass,jdbcType=INTEGER},
+      vehicle_overtime_avg_pass = #{vehicle_overtime_avg_pass,jdbcType=INTEGER},
+      vehicle_overtime_today_pass = #{vehicle_overtime_today_pass,jdbcType=INTEGER},
+      vehicle_today_pass = #{vehicle_today_pass,jdbcType=INTEGER}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

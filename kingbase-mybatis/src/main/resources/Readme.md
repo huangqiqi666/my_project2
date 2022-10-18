@@ -1,0 +1,2 @@
+这是个mybatis+druid+国产人大金仓的springboot示例
+注意：mapper.xml文件里的sql的表名需要带上双引号！因为人大金仓的sql里表名必须带双引号！

@@ -1,0 +1,59 @@
+一、参考博客
+1.mybatisPlus详细入门教程：https://www.toutiao.com/i7005456735955894798/?timestamp=1631325684&app=news_article_lite&use_new_style=1&req_id=20210911100124010151068049540FE291&share_token=5aac2d12-6545-450d-ba9c-ea76d35b5844&group_id=7005456735955894798&wid=1631325782360
+2.mybatisPlus的update坑（推荐使用UpdateWrapper方式更新！）：https://blog.csdn.net/hu_zhiting/article/details/105812985
+3.mybatisPlus官网：https://baomidou.com/guide/
+4.MyBatis-Plus LambdaQueryWrapper使用说明：https://blog.csdn.net/qlzw1990/article/details/116996422
+
+二、笔记！
+1.查询的方法(QueryWrapper建议替换成LambdaQueryWrapper！或者LambdaQueryChainWrapper链式查询)
+QueryWrapper<Employee> wrapper = new QueryWrapper<>();
+然后使用wrapper调用以下方法：
+（1）比较
+eq("name", "老王")等价于name = '老王'
+ne("name", "老王")等价于name != '老王'
+gt表示大于。gt("age", 18)等价于age > 18
+ge表示大于等于。ge("age", 18)等价于age > =18
+lt表示小于1。lt("age", 18)等价于age < 18
+le表示小于等于。le("age", 18)等价于age <= 18
+between("age", 18, 30)等价于age between 18 and 30。
+notBetween("age", 18, 30)等价于age not between 18 and 30
+（2）判空
+isNull("name")等价于name is null。
+isNotNull("name")等价于name is not null
+（3）in
+in("age",{1,2,3})--->age in (1,2,3)
+notIn("age",{1,2,3})--->age not in (1,2,3)
+inSql("age", "1,2,3,4,5,6")等价于age in (1,2,3,4,5,6)
+notInSql("id", "select id from table where id < 3")--->id not in (select id from table where id < 3)
+(4)like
+like("name", "lin")
+notLike("name", "lin")
+likeLeft("name", "lin")
+likeRight("name", "王")
+（5）or:主动调用or表示紧接着下一个方法不是用and连接!(不调用or则默认为使用and连接)
+    wrapper.eq("age", 18).or().eq("name", "xiaolin").or().eq("id", 1L);
+(6)分组查询
+groupBy("dept_id")
+(7)其他
+拼接在最后，例如：last(“LIMIT 1”)
+
+三、QueryWrapper、LambdaQueryWrapper、LambdaQueryChainWrapper（链式查询）
+（1）QueryWrapper:
+QueryMapper<Onject>query=new QueryMapper<>();
+QueryWrapper<BannerItem> wrapper = new QueryWrapper<>();
+wrapper.eq("banner_id", id);
+List<BannerItem> bannerItems = bannerItemMapper.selectList(wrapper);
+（2）LambdaQueryWrapper:
+LambdaQueryWrapper<BannerItem> wrapper = new LambdaQueryWrapper<>();
+wrapper.eq(BannerItem::getBannerId, id);
+List<BannerItem> bannerItems = bannerItemMapper.selectList(wrapper);
+（3）LambdaQueryChainWrapper（链式查询）:
+如果只想查询一条记录，例如通过id查询某条记录的详情，使用.one()即可，例如
+BannerItem bannerItem = new LambdaQueryChainWrapper<>(bannerItemMapper)
+                        .eq(BannerItem::getId, id)
+                        .one();
+
+
+四、本模块其他知识
+1.yml文件的“:”后的值要先空格；上下空格，对齐（参考yml文件规范）
+2.本服务的注册中心是Eureka,也可以按照需求改成zookeeper、consul等（修改pom文件的依赖、修改配置文件、修改启动类的注解即可）
