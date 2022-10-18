@@ -27,6 +27,7 @@
         <module>kingbase-mybatis</module>
         <module>transactional-demo</module>
         <module>arthas-demo</module>
+        <module>es-kudu</module>
     </modules>
 
 
