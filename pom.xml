@@ -28,6 +28,8 @@
         <module>transactional-demo</module>
         <module>arthas-demo</module>
         <module>es-kudu</module>
+        <module>design-pattern</module>
+        <module>poi-demo</module>
     </modules>
 
 
